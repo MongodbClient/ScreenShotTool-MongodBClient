@@ -127,7 +127,7 @@
             Controls.Add(label1);
             Controls.Add(listBox1);
             Name = "Window";
-            Text = "Tool by Jonass";
+            Text = "ScreenshotTool by MongodbClient";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
