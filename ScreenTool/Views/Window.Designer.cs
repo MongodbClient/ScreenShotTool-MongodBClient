@@ -2,15 +2,7 @@
 {
     partial class Window
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +14,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
@@ -41,9 +29,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
-            // 
-            // listBox1
-            // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
             listBox1.Location = new Point(12, 28);
@@ -51,9 +36,6 @@
             listBox1.Size = new Size(144, 94);
             listBox1.TabIndex = 0;
             listBox1.SelectedIndexChanged += ScreenBoxIndexChange;
-            // 
-            // label1
-            // 
             label1.AutoSize = true;
             label1.Location = new Point(12, 5);
             label1.Name = "label1";
@@ -61,9 +43,6 @@
             label1.Size = new Size(47, 15);
             label1.TabIndex = 1;
             label1.Text = "Screens";
-            // 
-            // button1
-            // 
             button1.Location = new Point(12, 128);
             button1.Name = "button1";
             button1.Size = new Size(120, 34);
@@ -71,17 +50,11 @@
             button1.Text = "Screenshot";
             button1.UseVisualStyleBackColor = true;
             button1.Click += ScreenShotButtonOnClick;
-            // 
-            // pictureBox1
-            // 
             pictureBox1.Location = new Point(162, 28);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(612, 395);
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
-            // 
-            // button2
-            // 
             button2.Location = new Point(12, 168);
             button2.Name = "button2";
             button2.Size = new Size(120, 32);
@@ -89,9 +62,6 @@
             button2.Text = "Directory";
             button2.UseVisualStyleBackColor = true;
             button2.Click += SelectFolderButtonOnClick;
-            // 
-            // checkBox1
-            // 
             checkBox1.AutoSize = true;
             checkBox1.Location = new Point(29, 254);
             checkBox1.Name = "checkBox1";
@@ -99,9 +69,6 @@
             checkBox1.TabIndex = 5;
             checkBox1.Text = "Upload? (Imgur)";
             checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
             button3.Location = new Point(12, 206);
             button3.Name = "button3";
             button3.Size = new Size(120, 32);
@@ -109,13 +76,7 @@
             button3.Text = "Refresh";
             button3.UseVisualStyleBackColor = true;
             button3.Click += RefreshButtonOnClick;
-            // 
-            // errorProvider1
-            // 
             errorProvider1.ContainerControl = this;
-            // 
-            // Window
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
