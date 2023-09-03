@@ -1,4 +1,4 @@
-# ScreenShotTool-MongodBClient
+# ScreenshotTool-MongodBClient
 
 Simple Screenshot tool with ImgurAPI integratation 
 
