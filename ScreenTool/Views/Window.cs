@@ -51,16 +51,16 @@ namespace ScreenTool.Views
             string filePath = $"{(SelectedFilePath != null ? SelectedFilePath : Program.ProgramPath)}\\screenshot_{DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss")}.png";
             try
             {
+
+                screenshot.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
                 if (!checkBox1.Checked)
                 {
-                    screenshot.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
                     Clipboard.SetImage(screenshot);
                     screenshot.Dispose();
                     MessageBox.Show($"Screenshot saved as {filePath}", "Screenshot Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    screenshot.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
                     screenshot.Dispose();
                     ImgurAPI imgurAPI = new ImgurAPI();
                     string url = await imgurAPI.GetAPICallback(filePath);
