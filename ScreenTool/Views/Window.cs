@@ -11,22 +11,16 @@ namespace ScreenTool.Views
         public Window()
         {
             InitializeComponent();
-
-            Screen[] screens = Screen.AllScreens;
-            for (int i = 1; i <= screens.Length; i++)
-            {
-                listBox1.Items.Add("Screen | " + i);
-            }
+            StartPosition = FormStartPosition.CenterScreen;
             for (int i = 0; i < Screen.AllScreens.Length; i++)
             {
+                listBox1.Items.Add("Screen | " + i);
                 if (Screen.AllScreens[i] == Screen.PrimaryScreen)
                 {
                     listBox1.SelectedIndex = i;
                     UpdateStatusPicture(i);
-                    break;
                 }
             }
-            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void ScreenBoxIndexChange(object sender, EventArgs e)
