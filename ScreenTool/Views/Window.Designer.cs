@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             listBox1 = new ListBox();
             label1 = new Label();
             button1 = new Button();
@@ -36,7 +37,9 @@
             folderBrowserDialog1 = new FolderBrowserDialog();
             checkBox1 = new CheckBox();
             button3 = new Button();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // listBox1
@@ -54,9 +57,10 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 5);
             label1.Name = "label1";
-            label1.Size = new Size(106, 15);
+            label1.RightToLeft = RightToLeft.Yes;
+            label1.Size = new Size(47, 15);
             label1.TabIndex = 1;
-            label1.Text = "Bildschirmauswahl";
+            label1.Text = "Screens";
             // 
             // button1
             // 
@@ -82,7 +86,7 @@
             button2.Name = "button2";
             button2.Size = new Size(120, 32);
             button2.TabIndex = 4;
-            button2.Text = "Verzeichnis";
+            button2.Text = "Directory";
             button2.UseVisualStyleBackColor = true;
             button2.Click += SelectFolderButtonOnClick;
             // 
@@ -91,9 +95,9 @@
             checkBox1.AutoSize = true;
             checkBox1.Location = new Point(29, 254);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(89, 19);
+            checkBox1.Size = new Size(112, 19);
             checkBox1.TabIndex = 5;
-            checkBox1.Text = "Hochladen?";
+            checkBox1.Text = "Upload? (Imgur)";
             checkBox1.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -105,6 +109,10 @@
             button3.Text = "Refresh";
             button3.UseVisualStyleBackColor = true;
             button3.Click += RefreshButtonOnClick;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
             // 
             // Window
             // 
@@ -121,6 +129,7 @@
             Name = "Window";
             Text = "Tool by Jonass";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -135,5 +144,6 @@
         private FolderBrowserDialog folderBrowserDialog1;
         private CheckBox checkBox1;
         private Button button3;
+        private ErrorProvider errorProvider1;
     }
 }

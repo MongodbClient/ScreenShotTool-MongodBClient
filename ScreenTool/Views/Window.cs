@@ -31,7 +31,7 @@ namespace ScreenTool.Views
 
         private void ScreenBoxIndexChange(object sender, EventArgs e)
         {
-            if(listBox1.SelectedIndex != activeScreenIndex)
+            if (listBox1.SelectedIndex != activeScreenIndex)
             {
                 UpdateStatusPicture(listBox1.SelectedIndex);
                 activeScreenIndex = listBox1.SelectedIndex;
