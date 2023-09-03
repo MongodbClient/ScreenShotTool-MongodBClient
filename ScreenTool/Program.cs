@@ -2,9 +2,9 @@ namespace ScreenTool
 {
     internal static class Program
     {
-        public static string ProgramPath { get; } = @"C:\Mongo";
-        public static string Imgure_ClientID = "";
-        public static string Imgure_Token = "";
+        public readonly static string ProgramPath = @"C:\Mongo";
+        public readonly static string Imgure_ClientID = "";
+        public readonly static string Imgure_Token = "";
 
         [STAThread]
         static void Main()
