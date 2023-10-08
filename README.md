@@ -7,7 +7,7 @@ Simple Screenshot tool with ImgurAPI integratation  V1.0
 
 # Update V1.0.1
 
-// Implementet new settings button<br>
+// Implementet new settings button for imgur upload<br>
 // Improve code performance<br>
 // Add config to save settings<br>
 // Fix error when screenshot spamm, when upload enabled<br>
