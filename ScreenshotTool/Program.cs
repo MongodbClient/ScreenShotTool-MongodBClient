@@ -9,6 +9,7 @@ namespace ScreenTool
         public static string ProgramPath = @"C:\Mongo";
         public static string Imgure_ClientID = "";
         public static string Imgure_Token = "";
+        public static bool AutoUpload = false;
         public static ConfigAPI ConfigAPI { get; set; }
         public static ConfigModel config;
 
@@ -22,6 +23,7 @@ namespace ScreenTool
 
             ConfigAPI = new ConfigAPI();
             config = ConfigAPI.Initialize();
+            AutoUpload = config.AutoUpload;
 
             ApplicationConfiguration.Initialize();
             Application.Run(new Views.Window());
