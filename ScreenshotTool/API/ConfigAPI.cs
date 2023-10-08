@@ -8,17 +8,17 @@ namespace ScreenshotTool.API
 
         public ConfigModel Initialize()
         {
-            if (!File.Exists(Program.ProgramPath + "\\config.json"))
+            if (!File.Exists(ScreenTool.ScreenshotTool.ProgramPath + "\\config.json"))
             {
-                File.Create(Program.ProgramPath + "\\config.json").Close();
-                File.WriteAllText(Program.ProgramPath + "\\config.json", JsonConvert.SerializeObject(new ConfigModel()));
+                File.Create(ScreenTool.ScreenshotTool.ProgramPath + "\\config.json").Close();
+                File.WriteAllText(ScreenTool.ScreenshotTool.ProgramPath + "\\config.json", JsonConvert.SerializeObject(new ConfigModel()));
                 return new ConfigModel();
             }
             else
             {
-                var config = JsonConvert.DeserializeObject<ConfigModel>(File.ReadAllText(Program.ProgramPath + "\\config.json"));
-                Program.Imgure_ClientID = config.Imgur_ClientID;
-                Program.Imgure_Token = config.Imgur_Token;
+                var config = JsonConvert.DeserializeObject<ConfigModel>(File.ReadAllText(ScreenTool.ScreenshotTool.ProgramPath + "\\config.json"));
+                ScreenTool.ScreenshotTool.Imgure_ClientID = config.Imgur_ClientID;
+                ScreenTool.ScreenshotTool.Imgure_Token = config.Imgur_Token;
                
                 return config;
             }
@@ -26,7 +26,7 @@ namespace ScreenshotTool.API
 
         public void SaveConfig(ConfigModel config)
         {
-            File.WriteAllText(Program.ProgramPath + "\\config.json", JsonConvert.SerializeObject(config));
+            File.WriteAllText(ScreenTool.ScreenshotTool.ProgramPath + "\\config.json", JsonConvert.SerializeObject(config));
         }
 
         public class ConfigModel

@@ -27,7 +27,7 @@ namespace ScreenTool.Views
                 }
             }
 
-            checkBox1.Checked = Program.AutoUpload;
+            checkBox1.Checked = ScreenshotTool.AutoUpload;
 
         }
 
@@ -53,7 +53,7 @@ namespace ScreenTool.Views
                 graphics.CopyFromScreen(screen.Bounds.X, screen.Bounds.Y, 0, 0, screen.Bounds.Size);
             }
 
-            string filePath = $"{(SelectedFilePath != null ? SelectedFilePath : Program.ProgramPath)}\\screenshot_{DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss")}.png";
+            string filePath = $"{(SelectedFilePath != null ? SelectedFilePath : ScreenshotTool.ProgramPath)}\\screenshot_{DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss")}.png";
             try
             {
 
@@ -126,8 +126,8 @@ namespace ScreenTool.Views
 
             panel1.Visible = true;
             pictureBox1.Visible = false;
-            textBox2.Text = Program.config.Imgur_ClientID;
-            textBox1.Text = Program.config.Imgur_Token;
+            textBox2.Text = ScreenshotTool.config.Imgur_ClientID;
+            textBox1.Text = ScreenshotTool.config.Imgur_Token;
         }
 
 
@@ -136,10 +136,10 @@ namespace ScreenTool.Views
             var config = new ConfigAPI.ConfigModel();
             config.Imgur_Token = textBox1.Text;
             config.Imgur_ClientID = textBox2.Text;
-            Program.ConfigAPI.SaveConfig(config);
-            Program.config = config;
-            Program.Imgure_ClientID = config.Imgur_ClientID;
-            Program.Imgure_Token = config.Imgur_Token;
+            ScreenshotTool.ConfigAPI.SaveConfig(config);
+            ScreenshotTool.config = config;
+            ScreenshotTool.Imgure_ClientID = config.Imgur_ClientID;
+            ScreenshotTool.Imgure_Token = config.Imgur_Token;
             panel1.Visible = false;
             pictureBox1.Visible = true;
         }
@@ -155,9 +155,9 @@ namespace ScreenTool.Views
 
         private void UploadCheckBoxOnCheckedChanged(object sender, EventArgs e)
         {
-            Program.AutoUpload = checkBox1.Checked;
-            Program.config.AutoUpload = checkBox1.Checked;
-            Program.ConfigAPI.SaveConfig(Program.config);
+            ScreenshotTool.AutoUpload = checkBox1.Checked;
+            ScreenshotTool.config.AutoUpload = checkBox1.Checked;
+            ScreenshotTool.ConfigAPI.SaveConfig(ScreenshotTool.config);
         }
     }
 }
