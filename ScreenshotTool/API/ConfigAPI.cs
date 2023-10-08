@@ -34,6 +34,7 @@ namespace ScreenshotTool.API
             public string Imgur_ClientID { get; set; } = "";
             public string Imgur_Token { get; set; } = "";
             public bool AutoUpload { get; set; } = false;
+            public int StyleIndex { get; set; } = 0;
         }   
 
     }
