@@ -7,8 +7,8 @@ Simple Screenshot tool with ImgurAPI integratation  V1.0
 
 # Update V1.0.1
 
-// Implementet new Settings Button<br>
-// Improve Code performance<br>
-// Add Config to save settings<br>
+// Implementet new settings button<br>
+// Improve code performance<br>
+// Add config to save settings<br>
 
 <img src="update_1.png" alt="ERROR"> 
