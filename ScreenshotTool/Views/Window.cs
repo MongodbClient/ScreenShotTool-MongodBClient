@@ -29,7 +29,17 @@ namespace ScreenTool.Views
 
             checkBox1.Checked = ScreenshotTool.AutoUpload;
 
-            ChangeTheme(Color.White, Color.Black);
+            if(ScreenshotTool.StyleIndex == 0)
+            {
+                ChangeTheme(Color.White, Color.Black);
+                darkToolStripMenuItem.Checked = false;
+                lightToolStripMenuItem.Checked = true;
+            } else
+            {
+                ChangeTheme(Color.DarkGray, Color.White);
+                darkToolStripMenuItem.Checked = true;
+                lightToolStripMenuItem.Checked = false;
+            }
 
         }
 
@@ -190,6 +200,43 @@ namespace ScreenTool.Views
             this.panel1.BackColor = color;
             this.textBox1.BackColor = color;
             this.textBox2.BackColor = color;
+        
+            this.lightToolStripMenuItem.BackColor = color;
+            this.darkToolStripMenuItem.BackColor = color;
+            this.darkToolStripMenuItem.ForeColor = font;
+            this.lightToolStripMenuItem.ForeColor = font;
+
+            this.menuStrip1.BackColor = color;
+            this.menuStrip1.ForeColor = font;
+        }
+
+
+        private void LightThemeChangeListener(object sender, EventArgs e)
+        {
+            if(lightToolStripMenuItem.Checked == true)
+            {
+                return;
+            }
+
+            ChangeTheme(Color.White, Color.Black);
+            ScreenshotTool.config.StyleIndex = 0;
+            ScreenshotTool.ConfigAPI.SaveConfig(ScreenshotTool.config);
+
+            darkToolStripMenuItem.Checked = false;
+            lightToolStripMenuItem.Checked = true;
+        }
+
+        private void DarkThemeChangeListener(object sender, EventArgs e)
+        {
+            if(darkToolStripMenuItem.Checked == true)
+            {
+                return;
+            }
+            ChangeTheme(Color.DarkGray, Color.White); ScreenshotTool.config.StyleIndex = 1;
+            ScreenshotTool.ConfigAPI.SaveConfig(ScreenshotTool.config);
+
+            darkToolStripMenuItem.Checked = true;
+            lightToolStripMenuItem.Checked = false;
         }
     }
 }

@@ -35,9 +35,16 @@
             label2 = new Label();
             button4 = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
+            colorDialog1 = new ColorDialog();
+            contextMenuStrip2 = new ContextMenuStrip(components);
+            menuStrip1 = new MenuStrip();
+            stylesToolStripMenuItem = new ToolStripMenuItem();
+            darkToolStripMenuItem = new ToolStripMenuItem();
+            lightToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             panel1.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // listBox1
@@ -196,11 +203,49 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
+            // contextMenuStrip2
+            // 
+            contextMenuStrip2.Name = "contextMenuStrip2";
+            contextMenuStrip2.Size = new Size(61, 4);
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { stylesToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.TabIndex = 10;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // stylesToolStripMenuItem
+            // 
+            stylesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { darkToolStripMenuItem, lightToolStripMenuItem });
+            stylesToolStripMenuItem.Name = "stylesToolStripMenuItem";
+            stylesToolStripMenuItem.Size = new Size(49, 20);
+            stylesToolStripMenuItem.Text = "Styles";
+            // 
+            // darkToolStripMenuItem
+            // 
+            darkToolStripMenuItem.Name = "darkToolStripMenuItem";
+            darkToolStripMenuItem.Size = new Size(180, 22);
+            darkToolStripMenuItem.Text = "Dark";
+            darkToolStripMenuItem.Click += DarkThemeChangeListener;
+            // 
+            // lightToolStripMenuItem
+            // 
+            lightToolStripMenuItem.Checked = true;
+            lightToolStripMenuItem.CheckState = CheckState.Checked;
+            lightToolStripMenuItem.Name = "lightToolStripMenuItem";
+            lightToolStripMenuItem.Size = new Size(180, 22);
+            lightToolStripMenuItem.Text = "Light";
+            lightToolStripMenuItem.Click += LightThemeChangeListener;
+            // 
             // Window
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(menuStrip1);
             Controls.Add(button4);
             Controls.Add(panel1);
             Controls.Add(button3);
@@ -210,12 +255,15 @@
             Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(listBox1);
+            MainMenuStrip = menuStrip1;
             Name = "Window";
             Text = "ScreenshotTool by MongodbClient";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -240,5 +288,11 @@
         private Button button5;
         private Button button6;
         private ContextMenuStrip contextMenuStrip1;
+        private ColorDialog colorDialog1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem stylesToolStripMenuItem;
+        private ToolStripMenuItem darkToolStripMenuItem;
+        private ToolStripMenuItem lightToolStripMenuItem;
+        private ContextMenuStrip contextMenuStrip2;
     }
 }
