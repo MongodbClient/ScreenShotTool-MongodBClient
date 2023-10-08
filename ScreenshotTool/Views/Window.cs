@@ -29,6 +29,8 @@ namespace ScreenTool.Views
 
             checkBox1.Checked = ScreenshotTool.AutoUpload;
 
+            ChangeTheme(Color.White, Color.Black);
+
         }
 
         private void ScreenBoxIndexChange(object sender, EventArgs e)
@@ -146,13 +148,48 @@ namespace ScreenTool.Views
             pictureBox1.Visible = true;
         }
 
-
-
         private void UploadCheckBoxOnCheckedChanged(object sender, EventArgs e)
         {
             ScreenshotTool.AutoUpload = checkBox1.Checked;
             ScreenshotTool.config.AutoUpload = checkBox1.Checked;
             ScreenshotTool.ConfigAPI.SaveConfig(ScreenshotTool.config);
+        }
+
+        private void ChangeTheme(Color color, Color font)
+        {
+            this.BackColor = color;
+            this.checkBox1.BackColor = color;
+            this.button1.BackColor = color;
+
+            this.button1.ForeColor = font;
+
+            this.button2.ForeColor = font;
+            this.button3.ForeColor = font;
+            this.button4.ForeColor = font;
+            this.button5.ForeColor = font;
+            this.button6.ForeColor = font;
+            this.checkBox1.ForeColor = font;
+            this.label1.ForeColor = font;
+            this.label2.ForeColor = font;
+            this.label3.ForeColor = font;
+            this.listBox1.ForeColor = font;
+            this.panel1.ForeColor = font;
+            this.textBox1.ForeColor = font;
+            this.textBox2.ForeColor = font;
+
+
+            this.button2.BackColor = color;
+            this.button3.BackColor = color;
+            this.button4.BackColor = color;
+            this.button5.BackColor = color;
+            this.button6.BackColor = color;
+            this.label1.BackColor = color;
+            this.label2.BackColor = color;
+            this.label3.BackColor = color;
+            this.listBox1.BackColor = color;
+            this.panel1.BackColor = color;
+            this.textBox1.BackColor = color;
+            this.textBox2.BackColor = color;
         }
     }
 }

@@ -4,7 +4,7 @@ using static ScreenshotTool.API.ConfigAPI;
 
 namespace ScreenTool
 {
-    internal static class Program
+    internal static class ScreenshotTool
     {
         public static string ProgramPath = @"C:\Mongo";
         public static string Imgure_ClientID = "";
