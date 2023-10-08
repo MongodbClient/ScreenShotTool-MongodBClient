@@ -38,9 +38,6 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // listBox1
-            // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
             listBox1.Location = new Point(12, 28);
@@ -48,9 +45,6 @@
             listBox1.Size = new Size(144, 94);
             listBox1.TabIndex = 0;
             listBox1.SelectedIndexChanged += ScreenBoxIndexChange;
-            // 
-            // label1
-            // 
             label1.AutoSize = true;
             label1.Location = new Point(12, 5);
             label1.Name = "label1";
@@ -58,9 +52,6 @@
             label1.Size = new Size(47, 15);
             label1.TabIndex = 1;
             label1.Text = "Screens";
-            // 
-            // button1
-            // 
             button1.Location = new Point(12, 128);
             button1.Name = "button1";
             button1.Size = new Size(120, 34);
@@ -68,17 +59,11 @@
             button1.Text = "Screenshot";
             button1.UseVisualStyleBackColor = true;
             button1.Click += ScreenShotButtonOnClick;
-            // 
-            // pictureBox1
-            // 
             pictureBox1.Location = new Point(162, 28);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(612, 395);
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
-            // 
-            // button2
-            // 
             button2.Location = new Point(12, 168);
             button2.Name = "button2";
             button2.Size = new Size(120, 32);
@@ -86,9 +71,6 @@
             button2.Text = "Directory";
             button2.UseVisualStyleBackColor = true;
             button2.Click += SelectFolderButtonOnClick;
-            // 
-            // checkBox1
-            // 
             checkBox1.AutoSize = true;
             checkBox1.Location = new Point(20, 282);
             checkBox1.Name = "checkBox1";
@@ -97,9 +79,6 @@
             checkBox1.Text = "Upload? (Imgur)";
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += UploadCheckBoxOnCheckedChanged;
-            // 
-            // button3
-            // 
             button3.Location = new Point(12, 206);
             button3.Name = "button3";
             button3.Size = new Size(120, 32);
@@ -107,13 +86,7 @@
             button3.Text = "Refresh";
             button3.UseVisualStyleBackColor = true;
             button3.Click += RefreshButtonOnClick;
-            // 
-            // errorProvider1
-            // 
             errorProvider1.ContainerControl = this;
-            // 
-            // panel1
-            // 
             panel1.Controls.Add(button6);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(textBox2);
@@ -124,9 +97,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(339, 252);
             panel1.TabIndex = 7;
-            // 
-            // button6
-            // 
             button6.Location = new Point(81, 217);
             button6.Name = "button6";
             button6.Size = new Size(75, 23);
@@ -134,9 +104,6 @@
             button6.Text = "Back";
             button6.UseVisualStyleBackColor = true;
             button6.Click += BackButtonClick;
-            // 
-            // button5
-            // 
             button5.Location = new Point(0, 217);
             button5.Name = "button5";
             button5.Size = new Size(75, 23);
@@ -144,9 +111,6 @@
             button5.Text = "Change";
             button5.UseVisualStyleBackColor = true;
             button5.Click += ChangeButtonClick;
-            // 
-            // textBox2
-            // 
             textBox2.Location = new Point(3, 63);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(322, 23);
@@ -155,9 +119,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(314, 23);
             textBox1.TabIndex = 2;
-            // 
-            // label3
-            // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(0, 124);
@@ -165,9 +126,6 @@
             label3.Size = new Size(119, 25);
             label3.TabIndex = 1;
             label3.Text = "Imgur Secret";
-            // 
-            // label2
-            // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(0, 35);
@@ -175,10 +133,6 @@
             label2.Size = new Size(134, 25);
             label2.TabIndex = 0;
             label2.Text = "Imgur ClientID";
-            label2.Click += label2_Click;
-            // 
-            // button4
-            // 
             button4.Location = new Point(12, 244);
             button4.Name = "button4";
             button4.Size = new Size(120, 32);
@@ -186,9 +140,6 @@
             button4.Text = "Settings";
             button4.UseVisualStyleBackColor = true;
             button4.Click += SettingsButtonOnClick;
-            // 
-            // Window
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);

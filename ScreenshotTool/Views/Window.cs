@@ -116,11 +116,6 @@ namespace ScreenTool.Views
             pictureBox1.Image = resizedScreenshot;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void SettingsButtonOnClick(object sender, EventArgs e)
         {
 
