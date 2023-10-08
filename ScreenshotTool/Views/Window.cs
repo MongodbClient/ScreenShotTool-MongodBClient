@@ -29,12 +29,13 @@ namespace ScreenTool.Views
 
             checkBox1.Checked = ScreenshotTool.AutoUpload;
 
-            if(ScreenshotTool.StyleIndex == 0)
+            if (ScreenshotTool.StyleIndex == 0)
             {
                 ChangeTheme(Color.White, Color.Black);
                 darkToolStripMenuItem.Checked = false;
                 lightToolStripMenuItem.Checked = true;
-            } else
+            }
+            else
             {
                 ChangeTheme(Color.DarkGray, Color.White);
                 darkToolStripMenuItem.Checked = true;
@@ -200,7 +201,7 @@ namespace ScreenTool.Views
             this.panel1.BackColor = color;
             this.textBox1.BackColor = color;
             this.textBox2.BackColor = color;
-        
+
             this.lightToolStripMenuItem.BackColor = color;
             this.darkToolStripMenuItem.BackColor = color;
             this.darkToolStripMenuItem.ForeColor = font;
@@ -213,7 +214,7 @@ namespace ScreenTool.Views
 
         private void LightThemeChangeListener(object sender, EventArgs e)
         {
-            if(lightToolStripMenuItem.Checked == true)
+            if (lightToolStripMenuItem.Checked == true)
             {
                 return;
             }
@@ -228,7 +229,7 @@ namespace ScreenTool.Views
 
         private void DarkThemeChangeListener(object sender, EventArgs e)
         {
-            if(darkToolStripMenuItem.Checked == true)
+            if (darkToolStripMenuItem.Checked == true)
             {
                 return;
             }

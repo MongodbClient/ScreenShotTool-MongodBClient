@@ -189,7 +189,7 @@
             // 
             // button4
             // 
-            button4.BackColor = SystemColors.ActiveCaptionText;
+            button4.BackColor = SystemColors.Control;
             button4.Location = new Point(12, 244);
             button4.Name = "button4";
             button4.Size = new Size(120, 32);
@@ -227,7 +227,7 @@
             // darkToolStripMenuItem
             // 
             darkToolStripMenuItem.Name = "darkToolStripMenuItem";
-            darkToolStripMenuItem.Size = new Size(180, 22);
+            darkToolStripMenuItem.Size = new Size(101, 22);
             darkToolStripMenuItem.Text = "Dark";
             darkToolStripMenuItem.Click += DarkThemeChangeListener;
             // 
@@ -236,7 +236,7 @@
             lightToolStripMenuItem.Checked = true;
             lightToolStripMenuItem.CheckState = CheckState.Checked;
             lightToolStripMenuItem.Name = "lightToolStripMenuItem";
-            lightToolStripMenuItem.Size = new Size(180, 22);
+            lightToolStripMenuItem.Size = new Size(101, 22);
             lightToolStripMenuItem.Text = "Light";
             lightToolStripMenuItem.Click += LightThemeChangeListener;
             // 
