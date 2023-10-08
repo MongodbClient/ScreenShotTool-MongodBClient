@@ -19,6 +19,7 @@ namespace ScreenshotTool.API
                 var config = JsonConvert.DeserializeObject<ConfigModel>(File.ReadAllText(Program.ProgramPath + "\\config.json"));
                 Program.Imgure_ClientID = config.Imgur_ClientID;
                 Program.Imgure_Token = config.Imgur_Token;
+               
                 return config;
             }
         }
@@ -32,6 +33,7 @@ namespace ScreenshotTool.API
         {
             public string Imgur_ClientID { get; set; } = "";
             public string Imgur_Token { get; set; } = "";
+            public bool AutoUpload { get; set; } = false;
         }   
 
     }
