@@ -56,7 +56,7 @@ namespace ScreenTool.Views
         private async void ScreenShotButtonOnClick(object sender, EventArgs e)
         {
 
-            if (Uploading) return;
+            if (Uploading || !pictureBox1.Visible) return;
 
             int screenIndex = listBox1.SelectedIndex;
             Screen screen = Screen.AllScreens[screenIndex];
@@ -95,6 +95,9 @@ namespace ScreenTool.Views
         }
         private void SelectFolderButtonOnClick(object sender, EventArgs e)
         {
+
+            if(!pictureBox1.Visible) return;
+
             folderBrowserDialog1.Description = "Select a folder to save the screenshots in";
             folderBrowserDialog1.RootFolder = Environment.SpecialFolder.Desktop;
             DialogResult result = folderBrowserDialog1.ShowDialog();
@@ -106,6 +109,7 @@ namespace ScreenTool.Views
 
         private void RefreshButtonOnClick(object sender, EventArgs e)
         {
+            if(!pictureBox1.Visible) return;
             UpdateStatusPicture(listBox1.SelectedIndex);
         }
 
