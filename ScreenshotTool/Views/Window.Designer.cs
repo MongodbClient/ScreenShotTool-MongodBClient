@@ -96,6 +96,7 @@
             checkBox1.TabIndex = 5;
             checkBox1.Text = "Upload? (Imgur)";
             checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += UploadCheckBoxOnCheckedChanged;
             // 
             // button3
             // 

@@ -8,6 +8,7 @@ namespace ScreenTool.Views
 
         private string SelectedFilePath = null;
         private int activeScreenIndex = 0;
+        private bool Uploading = false;
 
         public Window()
         {
@@ -26,8 +27,7 @@ namespace ScreenTool.Views
                 }
             }
 
-            this.Resize += ResizeListener;
-
+            checkBox1.Checked = Program.AutoUpload;
 
         }
 
@@ -42,6 +42,9 @@ namespace ScreenTool.Views
 
         private async void ScreenShotButtonOnClick(object sender, EventArgs e)
         {
+
+            if (Uploading) return;
+
             int screenIndex = listBox1.SelectedIndex;
             Screen screen = Screen.AllScreens[screenIndex];
             Bitmap screenshot = new Bitmap(screen.Bounds.Width, screen.Bounds.Height);
@@ -63,11 +66,13 @@ namespace ScreenTool.Views
                 }
                 else
                 {
+                    Uploading = true;
                     screenshot.Dispose();
                     ImgurAPI imgurAPI = new ImgurAPI();
                     string url = await imgurAPI.GetAPICallback(filePath);
                     MessageBox.Show($"Screenshot URL: {url}\nScreenshot saved as {filePath}", "Screenshot Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clipboard.SetText(url);
+                    Uploading = false;
                 }
             }
             catch (Exception ex)
@@ -146,12 +151,13 @@ namespace ScreenTool.Views
             pictureBox1.Visible = true;
         }
 
-        private void ResizeListener(object sender, EventArgs e)
-        {
-            UpdateStatusPicture(activeScreenIndex);
-            pictureBox1.Visible = true;
-            panel1.Visible = false;
-        }
 
+
+        private void UploadCheckBoxOnCheckedChanged(object sender, EventArgs e)
+        {
+            Program.AutoUpload = checkBox1.Checked;
+            Program.config.AutoUpload = checkBox1.Checked;
+            Program.ConfigAPI.SaveConfig(Program.config);
+        }
     }
 }
