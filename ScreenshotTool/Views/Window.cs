@@ -1,4 +1,5 @@
-﻿using ScreenTool.API;
+﻿using ScreenshotTool.API;
+using ScreenTool.API;
 
 namespace ScreenTool.Views
 {
@@ -12,6 +13,9 @@ namespace ScreenTool.Views
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+
+            panel1.Visible = false;
+
             for (int i = 0; i < Screen.AllScreens.Length; i++)
             {
                 listBox1.Items.Add("Screen | " + i);
@@ -21,6 +25,10 @@ namespace ScreenTool.Views
                     UpdateStatusPicture(i);
                 }
             }
+
+            this.Resize += ResizeListener;
+
+
         }
 
         private void ScreenBoxIndexChange(object sender, EventArgs e)
@@ -102,5 +110,48 @@ namespace ScreenTool.Views
             }
             pictureBox1.Image = resizedScreenshot;
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SettingsButtonOnClick(object sender, EventArgs e)
+        {
+
+            panel1.Visible = true;
+            pictureBox1.Visible = false;
+            textBox2.Text = Program.config.Imgur_ClientID;
+            textBox1.Text = Program.config.Imgur_Token;
+        }
+
+
+        private void ChangeButtonClick(object sender, EventArgs e)
+        {
+            var config = new ConfigAPI.ConfigModel();
+            config.Imgur_Token = textBox1.Text;
+            config.Imgur_ClientID = textBox2.Text;
+            Program.ConfigAPI.SaveConfig(config);
+            Program.config = config;
+            Program.Imgure_ClientID = config.Imgur_ClientID;
+            Program.Imgure_Token = config.Imgur_Token;
+            panel1.Visible = false;
+            pictureBox1.Visible = true;
+        }
+
+
+        private void BackButtonClick(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+            pictureBox1.Visible = true;
+        }
+
+        private void ResizeListener(object sender, EventArgs e)
+        {
+            UpdateStatusPicture(activeScreenIndex);
+            pictureBox1.Visible = true;
+            panel1.Visible = false;
+        }
+
     }
 }
