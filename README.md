@@ -10,5 +10,6 @@ Simple Screenshot tool with ImgurAPI integratation  V1.0
 // Implementet new settings button<br>
 // Improve code performance<br>
 // Add config to save settings<br>
+// Fix error when screenshot spamm, when upload enabled<br>
 
 <img src="update_1.png" alt="ERROR"> 
