@@ -17,6 +17,6 @@ Simple Screenshot tool with ImgurAPI integratation  V1.0
 
 # Update V1.0.2 / Working on
 
-// Add galery for system based screenshots
-// Add new styles
-// ...
+// Add galery for system based screenshots<br>
+// Add new styles<br>
+// ...<br>
