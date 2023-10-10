@@ -17,8 +17,8 @@ namespace ScreenshotTool.API
             else
             {
                 var config = JsonConvert.DeserializeObject<ConfigModel>(File.ReadAllText(ScreenTool.ScreenshotTool.ProgramPath + "\\config.json"));
-                ScreenTool.ScreenshotTool.Imgure_ClientID = config.Imgur_ClientID;
-                ScreenTool.ScreenshotTool.Imgure_Token = config.Imgur_Token;
+                ScreenTool.ScreenshotTool.ImgureClientId = config.Imgur_ClientID;
+                ScreenTool.ScreenshotTool.ImgureToken = config.Imgur_Token;
                
                 return config;
             }

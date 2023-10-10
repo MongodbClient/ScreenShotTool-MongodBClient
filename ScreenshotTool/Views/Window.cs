@@ -6,9 +6,9 @@ namespace ScreenTool.Views
     public partial class Window : Form
     {
 
-        private string SelectedFilePath = null;
-        private int activeScreenIndex = 0;
-        private bool Uploading = false;
+        private string _selectedFilePath = null;
+        private int _activeScreenIndex = 0;
+        private bool _uploading = false;
 
         public Window()
         {
@@ -46,17 +46,17 @@ namespace ScreenTool.Views
 
         private void ScreenBoxIndexChange(object sender, EventArgs e)
         {
-            if (listBox1.SelectedIndex != activeScreenIndex)
+            if (listBox1.SelectedIndex != _activeScreenIndex)
             {
                 UpdateStatusPicture(listBox1.SelectedIndex);
-                activeScreenIndex = listBox1.SelectedIndex;
+                _activeScreenIndex = listBox1.SelectedIndex;
             }
         }
 
         private async void ScreenShotButtonOnClick(object sender, EventArgs e)
         {
 
-            if (Uploading || !pictureBox1.Visible) return;
+            if (_uploading || !pictureBox1.Visible) return;
 
             int screenIndex = listBox1.SelectedIndex;
             Screen screen = Screen.AllScreens[screenIndex];
@@ -66,7 +66,7 @@ namespace ScreenTool.Views
                 graphics.CopyFromScreen(screen.Bounds.X, screen.Bounds.Y, 0, 0, screen.Bounds.Size);
             }
 
-            string filePath = $"{(SelectedFilePath != null ? SelectedFilePath : ScreenshotTool.ProgramPath)}\\screenshot_{DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss")}.png";
+            string filePath = $"{(_selectedFilePath != null ? _selectedFilePath : ScreenshotTool.ProgramPath)}\\screenshot_{DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss")}.png";
             try
             {
 
@@ -79,13 +79,13 @@ namespace ScreenTool.Views
                 }
                 else
                 {
-                    Uploading = true;
+                    _uploading = true;
                     screenshot.Dispose();
                     ImgurAPI imgurAPI = new ImgurAPI();
                     string url = await imgurAPI.GetAPICallback(filePath);
                     MessageBox.Show($"Screenshot URL: {url}\nScreenshot saved as {filePath}", "Screenshot Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clipboard.SetText(url);
-                    Uploading = false;
+                    _uploading = false;
                 }
             }
             catch (Exception ex)
@@ -103,7 +103,7 @@ namespace ScreenTool.Views
             DialogResult result = folderBrowserDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
-                SelectedFilePath = folderBrowserDialog1.SelectedPath;
+                _selectedFilePath = folderBrowserDialog1.SelectedPath;
             }
         }
 
@@ -150,8 +150,8 @@ namespace ScreenTool.Views
             config.Imgur_ClientID = textBox2.Text;
             ScreenshotTool.ConfigAPI.SaveConfig(config);
             ScreenshotTool.config = config;
-            ScreenshotTool.Imgure_ClientID = config.Imgur_ClientID;
-            ScreenshotTool.Imgure_Token = config.Imgur_Token;
+            ScreenshotTool.ImgureClientId = config.Imgur_ClientID;
+            ScreenshotTool.ImgureToken = config.Imgur_Token;
             panel1.Visible = false;
             pictureBox1.Visible = true;
         }

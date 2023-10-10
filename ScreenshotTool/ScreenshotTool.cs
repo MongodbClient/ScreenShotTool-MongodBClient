@@ -7,8 +7,8 @@ namespace ScreenTool
     internal static class ScreenshotTool
     {
         public static string ProgramPath = @"C:\Mongo";
-        public static string Imgure_ClientID = "";
-        public static string Imgure_Token = "";
+        public static string ImgureClientId = "";
+        public static string ImgureToken = "";
         public static bool AutoUpload = false;
         public static int StyleIndex = 0;
         public static ConfigAPI ConfigAPI { get; set; }

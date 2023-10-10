@@ -8,7 +8,7 @@ namespace ScreenTool.API
     {
         public async Task<string> GetAPICallback(string filePath)
         {
-            var imgurClient = new ApiClient(ScreenshotTool.Imgure_ClientID, ScreenshotTool.Imgure_Token);
+            var imgurClient = new ApiClient(ScreenshotTool.ImgureClientId, ScreenshotTool.ImgureToken);
             var httpClient = new HttpClient();
             using var fileStream = File.OpenRead(filePath);
             var imageEndpoint = new ImageEndpoint(imgurClient, httpClient);
