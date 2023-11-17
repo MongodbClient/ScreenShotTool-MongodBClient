@@ -58,6 +58,8 @@ jobs:
     env:
       Solution_Name: ScreenshotTool.sln                     # Replace with your solution name, i.e. MyWpfApp.sln.
       Test_Project_Path: ScreenshotTool/ScreenshotTool.csproj                # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
+      Wap_Project_Directory: ScreenshotTool.Package.    # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
+      Wap_Project_Path: ScreenshotTool         
 
     steps:
     - name: Checkout
